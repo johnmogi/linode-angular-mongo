@@ -1,0 +1,91 @@
+(if you re-install make sure proccess is finished)
+http://178.79.129.145:2083
+192.168.137.225
+https://li353-26.members.linode.com:2083/
+root (default)
+ev7CigU4B7mbRG7B
+
+sudo nano /etc/hosts
+
+127.0.0.1     webstore.kodo.press webstore
+178.79.129.145 webstore.kodo.press webstore
+
+scp ~/.ssh/id_rsa.pub not_root@178.79.129.145 
+
+
+(read the console instructions and log through the given terminal link)
+
+root 
+uoetZ=?xhnIO (from whm) [ssh root]
+
+v4EibS77KchTOwFI - correct
+
+https://www.codementor.io/@tomgeraghty/hosting-an-express-server-nodejs-application-with-linode-e1j7wt7mr
+
+hostnamectl set-hostname webstore
+hostname
+
+WWWAcct 12.6.0 (c) 2020 cPanel, L.L.C....
+
+
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: webstore.kodo.press
+| Ip: 178.79.129.145 (n)
+| HasCgi: y
+| UserName: webstorekodo
+| PassWord: Id5OQC85Pnz96lVh
+| CpanelMod: paper_lantern
+| HomeRoot: /home
+| Quota: unlimited
+| NameServer1: ns1.members.linode.com
+| NameServer2: ns2.members.linode.com
+| NameServer3: 
+| NameServer4: 
+| Contact Email: anguru@gmail.com
+| Package: default
+| Feature List: default
+| Language: en
++===================================+
+...Done
+
+
+
+
+SSH Access:
+
+ssh root@178.79.129.145
+ssh webstorekodo@178.79.129.145
+
+ssh -p port user@IP
+ssh -p 178.79.129.145 webstorekodo@178.79.129.145
+
+ssh -p 178.79.129.145 webstorekodo@li185-145
+
+ssh webstorekodo@li185-145 [yes!]
+Id5OQC85Pnz96lVh
+
+Lish via SSH:
+
+ssh -t anguru@lish-london.linode.com cpanel-eu-west
+
+
+install nodejs:
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+
+
+You have created a MariaDB/MySQL database named “webstore_PortfolioProject”.
+
+
+4yYLUutm3b9Fr92w
+
+User: webstore_puser
+Database: webstore_PortfolioProject
+
+
+sudo nano /etc/hosts
+
+/home/johnmogi/Documents/ssh/
+
+scp ~/ /home/johnmogi/Documents/ssh//id_rsa.pub not_root@178.79.129.145

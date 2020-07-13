@@ -1,0 +1,33 @@
+<mat-card>
+  <h4 *ngIf="cartBox">{{ cartBox }}</h4>
+  <table *ngIf="userCartItems">
+    <thead>
+      <td>name</td>
+      <td>quantity</td>
+      <td>total</td>
+      <td></td>
+    </thead>
+    <tbody [@listAnimation]="userCartItems.length">
+      <tr *ngFor="let c of userCartItems">
+        <td>{{ c.itemName }}</td>
+        <td>{{ c.amount }}</td>
+        <td>{{ c.totalPrice }}</td>
+        <td>
+          <a (click)="removeItem(c.productID)" style="cursor: pointer;">[X]</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <section class="bottom-cart row">
+    <h5 class="col">SubTotal : {{ totalPrice }}</h5>
+    <button
+      mat-raised-button
+      color="primary"
+      class="col"
+      type="button"
+      routerLink="checkout"
+    >
+      Checkout
+    </button>
+  </section>
+</mat-card>
