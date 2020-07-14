@@ -8,10 +8,10 @@
         <mat-label>Identification</mat-label>
         <input
           matInput
-          name="id"
+          name="identification"
           #idIn="ngModel"
           minlength="8"
-          [(ngModel)]="addUser.id"
+          [(ngModel)]="addUser.identification"
           placeholder="Identification"
           required
         />
@@ -50,7 +50,7 @@
           value="94043"
           #passIn
           #passIn="ngModel"
-          minlength="3"
+          minlength="1"
           [(ngModel)]="addUser.password"
           placeholder="Choose password"
           required

@@ -15,7 +15,7 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class CheckoutComponent implements OnInit {
   public user = new AuthModel();
-  public userID = 0;
+  public _id = 0;
   public userCart = [];
   public userCartItems = [];
   public calendar = [1, 3, 15];
@@ -56,8 +56,8 @@ export class CheckoutComponent implements OnInit {
     store.subscribe(() => {
       this.user = store.getState().user; // * -user ready - get active cart:
       if (this.user && !this.user.isAdmin) {
-        this.userID = +this.user.userID;
-        this.fetchCart(this.user.userID);
+        this._id = +this.user._id;
+        this.fetchCart(this.user._id);
       }
       this.userCart = store.getState().cartItems;
     });
@@ -120,7 +120,7 @@ export class CheckoutComponent implements OnInit {
     const shipTime = `${year}-${month}-${day}:${hours}:${minutes}:${seconds}`;
 
     this.orderForm.cartID = this.userCart[0].cartID;
-    this.orderForm.clientID = this.userID;
+    this.orderForm.clientID = this._id;
     this.orderForm.subTotal = +this.totalPrice;
     this.orderService.addOrder(this.orderForm, shipTime).subscribe(
       (res) => {
@@ -133,7 +133,7 @@ export class CheckoutComponent implements OnInit {
 
   public makeCart() {
     // keeping old cart for billing purposes- but could also archive or delete it... and **{items}**...
-    this.cartService.makeCart(this.userID).subscribe(
+    this.cartService.makeCart(this._id).subscribe(
       () => {},
       (err) => err.message
     );

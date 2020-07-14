@@ -1,7 +1,7 @@
 export class AuthModel {
   public constructor(
-    public userID?: 0,
-    public id?: Number,
+    public _id?: 0,
+    public identification?: Number,
     public username_email?: String,
     public firstName?: String,
     public lastName?: String,
@@ -9,9 +9,11 @@ export class AuthModel {
     public city?: String,
     public street?: String,
     public isAdmin?: String,
-    public firstVisit?: String
+    public role?: String,
+    public visitCounter?: Number
   ) {}
 }
+
 
 export class RegAuthModel extends AuthModel {
   public constructor(

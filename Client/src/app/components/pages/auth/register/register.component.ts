@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   public user = new AuthModel();
   public addUser = {
-    id: '',
+    identification: '',
     username_email: '',
     password: '',
     firstName: '',
@@ -19,6 +19,8 @@ export class RegisterComponent implements OnInit {
     street: '',
     city: '',
   };
+
+
   public confPass = '';
   public validated0 = false;
   public validated1 = false;
@@ -47,8 +49,9 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
+
   public checkValid() {
-    if (!this.addUser.id || this.addUser.id.length < 7) {
+    if (!this.addUser.identification || this.addUser.identification.length < 1) { //7
       this.errorBox = this.errorMessages.id;
       return false;
     }
@@ -56,7 +59,7 @@ export class RegisterComponent implements OnInit {
       this.errorBox = this.errorMessages.email;
       return false;
     }
-    if (!this.addUser.password || this.addUser.password.length < 2) {
+    if (!this.addUser.password || this.addUser.password.length < 1) { //4
       this.errorBox = this.errorMessages.passwords;
       return false;
     }
@@ -68,6 +71,7 @@ export class RegisterComponent implements OnInit {
     }
   }
   public async checkUser() {
+    console.log(this.addUser)
     this.checkValid();
     if (!this.validated0) {
       this.errorBox = '';

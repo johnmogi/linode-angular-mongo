@@ -9,12 +9,13 @@ const mongoose = require("mongoose");
 // "city" : "1",
 // "street" : "1",
 // "role" : "Admin" | "Customer"
+// "visitCounter": 0
 
 const AuthSchema = mongoose.Schema({
     identification: {
         type: Number,
         required: true,
-        minlength: 9,
+        minlength: 1,
         maxlength: 10
     },
     firstName: {
@@ -32,13 +33,13 @@ const AuthSchema = mongoose.Schema({
     username_email: {
         type: String,
         required: true,
-        minlength: 6,
+        minlength: 1,
         maxlength: 40
     },
     password: {
         type: String,
         required: true,
-        minlength: 4
+        minlength: 1
     },
     city: {
         type: String,
@@ -55,8 +56,12 @@ const AuthSchema = mongoose.Schema({
     role: {
         type: String,
         required: true,
-        minlength: 3,
+        minlength: 1,
         maxlength: 60
+    },
+    visitCounter:{
+        type: Number,
+        required: false
     }
 
 }, {

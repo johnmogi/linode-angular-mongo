@@ -52,13 +52,13 @@ export class LayoutComponent implements OnInit {
         this.isAdmin = false;
 
         if (!this.userOrder) {
-          this.fetchOrder(this.user.userID);
+          this.fetchOrder(this.user._id);
         }
         if (!this.userCart) {
-          this.fetchCart(this.user.userID);
+          this.fetchCart(this.user._id);
         }
         this.firstName = this.user.firstName;
-        this.firstVisit = +this.user.firstVisit;
+        this.firstVisit = +this.user.visitCounter;
         this.visitCounter = true;
       }
     });
@@ -77,6 +77,9 @@ export class LayoutComponent implements OnInit {
     );
 
     // * fetch Orders load into store
+    if(this.user){
+
+    
     this.orderService.getAllorders().subscribe(
       (res) => {
         const action = {
@@ -89,8 +92,9 @@ export class LayoutComponent implements OnInit {
       (err) => alert(err.message)
     );
 
-    this.products = store.getState().products;
     this.orders = store.getState().orders;
+    }
+    this.products = store.getState().products;
   } // ngonint
 
   public resize() {

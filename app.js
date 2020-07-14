@@ -11,7 +11,7 @@ const authController = require("./controllers/auth-controller");
 const itemController = require("./controllers/item-controller");
 const adminController = require("./controllers/admin-controller");
 const cartController = require("./controllers/cart-controller");
-const orderController = require("./controllers/order-controller");
+// const orderController = require("./controllers/order-controller");
 
 
 
@@ -29,7 +29,7 @@ server.use('/api/auth', authController);
 server.use('/api/products', itemController);
 server.use('/api/admin', adminController);
 server.use('/api/cart', cartController);
-server.use('/api/orders', orderController);
+// server.use('/api/orders', orderController);
 
 
 

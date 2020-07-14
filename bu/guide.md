@@ -5,7 +5,7 @@ add rsa.pub
 
 login: 
 ssh root@178.79.184.26
-ssh root@185.3.94.160
+ssh root@178.79.129.145
 ssh -t anguru@lish-london.linode.com cpanel-eu-west [!1]
 v4EibS77KchTOwFI
 
@@ -32,7 +32,7 @@ ns1.members.linode.com
 
 in 15 days you need to cough 10$
 
-webstore.kodo.press [localhost login !2]
+webstore.kodo.press [localhost login ?]
 webstorekodo
 jO6vF5Svs6WtuzE9
 
@@ -58,6 +58,7 @@ WWWAcct 12.6.0 (c) 2020 cPanel, L.L.C....
 | Feature List: default
 | Language: en
 +===================================+
+sudo gpasswd -a webstorekodo sudo
 
 
 root whm pass:

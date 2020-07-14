@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Cart = require('../models/cart');
-const CartItems = require('../models/cart-items');
+// const CartItems = require('../models/cart-items');
 const cartLogic = require('../business-logic/cart-logic');
 
 // add cart: POST http://localhost:3000/api/cart/add-cart

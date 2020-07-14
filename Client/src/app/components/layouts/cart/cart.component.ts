@@ -52,7 +52,7 @@ export class CartComponent implements OnInit {
       // call cart and items:
       this.user = store.getState().user; // * -user ready - get active cart:
       if (this.user && !this.user.isAdmin && !this.cartLoad) {
-        this.fetchCart(this.user.userID);
+        this.fetchCart(this.user._id);
       }
     });
   }
